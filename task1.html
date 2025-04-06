@@ -1,0 +1,277 @@
+											MAIN PAGE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Connect - Home</title>
+    <style>
+        @font-face {
+            font-family: 'GothicFont';
+            src: url('fonts/MagnificChaos.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #2c003e, #ff0000);
+            font-family: 'GothicFont', sans-serif;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+        }
+        .nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .nav a {
+            background-color: #ff0000;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-decoration: none;
+            margin-left: 12px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .nav a:hover {
+            background-color: #8b0000;
+            transform: scale(1.1);
+        }
+        h1 {
+            color: white;
+            font-size: 7rem;
+            text-shadow: 6px 6px 15px rgba(255, 0, 0, 0.9);
+            font-family: 'GothicFont', sans-serif;
+            letter-spacing: 3px;
+        }
+        p {
+            color: white;
+            font-size: 2.5rem;
+            font-family: 'GothicFont', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+    </div>
+    <h1>App Interface</h1>
+   
+</body>
+</html>
+                                                                                             LOGIN PAGE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Flow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Signup</h2>
+    <form id="signupForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <span class="error" id="nameError"></span>
+        <input type="email" id="email" placeholder="Email" required>
+        <span class="error" id="emailError"></span>
+        <input type="password" id="password" placeholder="Password" required>
+        <span class="error" id="passwordError"></span>
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('signupForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+
+            // Validate Name
+            const name = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            if (name.value.trim() === "") {
+                isValid = false;
+                nameError.textContent = "Name is required.";
+            } else {
+                nameError.textContent = "";
+            }
+
+            
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                isValid = false;
+                emailError.textContent = "Invalid email address.";
+            } else {
+                emailError.textContent = "";
+            }
+
+            
+            const password = document.getElementById('password');
+            const passwordError = document.getElementById('passwordError');
+            if (password.value.length < 6) {
+                isValid = false;
+                passwordError.textContent = "Password must be at least 6 characters.";
+            } else {
+                passwordError.textContent = "";
+            }
+
+            if (isValid) {
+                alert("Signup successful!");
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+                                                                                     REGISTER PAGE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Blood Connect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #000000, #ff0000);
+            font-family: 'Arial', sans-serif;
+        }
+        .register-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+            width: 400px;
+        }
+        h2 {
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+        input, select {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .button {
+            background-color: #ff0000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .button:hover {
+            background-color: #cc0000;
+        }
+        .home-link {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #ff0000;
+            font-weight: bold;
+        }
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .gend {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form action="index.html">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="date" placeholder="Date of Birth" required>
+          
+            <input type="text" placeholder="Aadhar Card Number" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <select required class="gend">
+              <option value="" disabled selected>Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
+         
+            <input type="text" placeholder="Residential Address" required>
+            <button class="button" type="submit">Register</button>
+        </form>
+        <a href="login.html" class="home-link">Already have an account? Login</a>
+        <a href="index.html" class="home-link">Back to Home</a>
+    </div>
+</body>
+</html>

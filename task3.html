@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .menu-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .menu-category {
+            margin-bottom: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .menu-category h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .menu-item img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-details h3 {
+            margin: 0 0 5px;
+            color: #444;
+        }
+
+        .item-details p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #d32f2f;
+            min-width: 60px;
+            text-align: right;
+        }
+
+       
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .menu-item img {
+                max-width: 100%;
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+
+            .item-price {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <div class="menu-category">
+            <h2></h2>
+            
+                <div class="item-details">
+                    <h3>Chicken pakodi</h3>
+                    <p>Fresh chicken is made crispy.</p>
+                </div>
+                <div class="item-price">246/-</div>
+            </div>
+            
+                <div class="item-details">
+                    <h3>Chicken Wings</h3>
+                    <p>Chicken is served juicy and tasty</p>
+                </div>
+                <div class="item-price">199/-</div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2>Main Courses</h2>
+            <div class="menu-item">
+                
+                <div class="item-details">
+                    <h3>Chicken Dum Biryani</h3>
+                    <p>The basmati rice is cooked with chicken and spices.</p>
+                </div>
+                <div class="item-price">249/-</div>
+            </div>
+            <div class="menu-item">
+    
+                <div class="item-details">
+                    <h3>Chicken boneless biryani</h3>
+                    <p>Only boneless pieces are taken and used in the biryani .</p>
+                </div>
+                <div class="item-price">299/-</div>
+            </div>
